@@ -1,0 +1,68 @@
+\documentclass[letterpaper,10pt,oneside]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{fancyvrb}
+
+\title{Programming 2\\Assignment 1}
+\author{Robert R. Russell}
+
+\begin{document}
+
+\maketitle
+
+\section{Definition Of Problem}
+We are to write a program that creates a table of wind-chill indexes
+for a range of wind speeds and temperatures that we choose.
+
+We are to use this formula to calculate the wind chill.
+\begin{math}
+  wci = 35.74+0.6215F+(0.4275F-35.75)V^{0.16}\text{ for }3\leq{}V\text{ and }F\leq{}50
+\end{math}
+where $F$ is the air temperature in Farenheit and
+$V$ is the wind speed in miles per hour.
+
+\section{Preliminary Analysis}
+I chose to use calculate a formula that would be of some use for when
+I need to push carts at work. I chose 0mph and 20mph as the upper and
+lower limits for wind speed and an increment of 5mph. I chose 20$^{\circ}$F and
+50$^{\circ}$F as the upper and lower limits for temperature and an increment of 2$^{\circ}$F.
+
+\newpage
+\section{Code and Output}
+\subsection{main.c}
+\fvset{numbers=left}
+\VerbatimInput{main.c}
+\newpage
+\subsection{wci.h}
+\VerbatimInput{wci.h}
+\newpage
+\subsection{wci.c}
+\VerbatimInput{wci.c}
+\newpage
+\subsection{Output Table}
+\begin{tabular}{r|rrrrr}
+ &0mph & 5mph & 10mph & 15mph & 20mph \\ \hline
+20$^{\circ}$ &20.000 &12.981 &8.854 &6.219 &4.243 \\
+22$^{\circ}$ &22.000 &15.330 &11.333 &8.781 &6.867 \\
+24$^{\circ}$ &24.000 &17.679 &13.812 &11.342 &9.490 \\
+26$^{\circ}$ &26.000 &20.029 &16.291 &13.904 &12.114 \\
+28$^{\circ}$ &28.000 &22.378 &18.769 &16.466 &14.738 \\
+30$^{\circ}$ &30.000 &24.727 &21.248 &19.027 &17.362 \\
+32$^{\circ}$ &32.000 &27.076 &23.727 &21.589 &19.986 \\
+34$^{\circ}$ &34.000 &29.425 &26.206 &24.151 &22.609 \\
+36$^{\circ}$ &36.000 &31.774 &28.685 &26.712 &25.233 \\
+38$^{\circ}$ &38.000 &34.123 &31.164 &29.274 &27.857 \\
+40$^{\circ}$ &40.000 &36.472 &33.643 &31.836 &30.481 \\
+42$^{\circ}$ &42.000 &38.822 &36.121 &34.397 &33.105 \\
+44$^{\circ}$ &44.000 &41.171 &38.600 &36.959 &35.728 \\
+46$^{\circ}$ &46.000 &43.520 &41.079 &39.521 &38.352 \\
+48$^{\circ}$ &48.000 &45.869 &43.558 &42.082 &40.976 \\
+50$^{\circ}$ &50.000 &50.000 &50.000 &50.000 &50.000 \\
+\end{tabular}
+
+\section{Final Analysis}
+This was an interesting and useful assignment to get started with.
+The design discussion was very useful because I forgot to properly
+think about how I was going to format the created table before I started
+writing the main.c
+\end{document}

@@ -1,5 +1,9 @@
-#IFDEF WCI
-#DEFINE WCI
+/* programming_2/assignment_1/wci.h
+   Header for wci function
+   Robert R. Russell
+*/
+#ifndef WCI
+#define WCI
 
 /* Wind Chill Index
  * 
@@ -24,7 +28,12 @@
  *
  * "wind chill warning" when wind chills reach -20
  */
+#ifdef __GNUC__
+#define WARN_UNUSED __attribute__((warn_unused_result))
+/* Why call a function if we do not use the result. */
+float WARN_UNUSED wci(int temperature, int wind_speed);
+#else /* Not using GCC */
 
-float wci (int temperature, int wind_speed);
-
-#ENDIF
+float wci(int temperature, int wind_speed);
+#endif /* End of #ifdef __GNUC__ */
+#endif /* End of #ifndef WCI */
