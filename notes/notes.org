@@ -1,0 +1,8 @@
+* 2011-01-24
+** Input to a program can come from
+*** Source Code in the program
+*** Standard Input/File Handles
+*** Environment
+Fairly trivial to implement see getenv() function.
+*** Command Line
+
