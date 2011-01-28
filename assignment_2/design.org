@@ -1,0 +1,10 @@
+* TODO Assignment 2
+  DEADLINE: <2011-02-02 12:00>
+** TODO Outline of Main
+   DEADLINE: <2011-01-27 >
+*** TODO Parse and store command line arguments in a seperate function
+**** TODO Constrain the number of command line arguments
+     4 command line arguments
+**** TODO Identify the types of command line arguments
+     The second, third, and fourth are all integers
+**** TODO Logical 
