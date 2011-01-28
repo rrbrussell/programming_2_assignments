@@ -2,12 +2,12 @@
    Assignment 2 common datatypes
 */
 
-#IFNDEF ASSIGNMENT_2_COMMON_DATATYPES_H
-#DEFINE ASSIGNMENT_2_COMMON_DATATYPES_H
+#ifndef ASSIGNMENT_2_COMMON_DATATYPES_H
+#define ASSIGNMENT_2_COMMON_DATATYPES_H
 struct bounds_struct {
   int starting;
   int ending;
   int increment;
 };
 
-#ENDIF
+#endif

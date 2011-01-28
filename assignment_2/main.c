@@ -13,7 +13,7 @@
 int main(int argc, char *argv[]) {
   struct bounds_struct bounds;
   bool constraints_satisfied = true;
-  if(check_constriants(argc, argv, &bounds)) {
+  if(satisfy_constraints(argc, argv, &bounds)) {
     table_generator(bounds);
   } else {
     constraints_satisfied = false;
