@@ -16,7 +16,7 @@ bool satisfy_constraints(int argcount, char *arguments[],
        (sscanf(arguments[2], "%d", &bounds->ending) != EOF) &&
        (sscanf(arguments[3], "%d", &bounds->increment) != EOF)) {
       // All arguments have been confirmed to be integers 
-      if((((bounds->starting < bounds->ending) && (bounds->increment > 0))) &&
+      if((((bounds->starting < bounds->ending) && (bounds->increment > 0))) ||
 	 ((bounds->starting > bounds->ending) && (bounds->increment < 0))) {
 	return_value = true;
       }
@@ -24,7 +24,7 @@ bool satisfy_constraints(int argcount, char *arguments[],
   } else {
     fprintf(stderr, "table requires three arguments: ");
     fprintf(stderr, "\"the starting bound\" \"the ending bound\" ");
-    fprintf(stderr, "\" and the increment\"");
+    fprintf(stderr, "\"and the increment\"\n");
   }
   return return_value;
 }

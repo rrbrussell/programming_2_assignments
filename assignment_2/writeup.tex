@@ -1,23 +1,96 @@
-\documentclass[letterpaper,10pt,oneside]{scrartcl}
+\documentclass[letterpaper,oneside]{scrartcl}
 \usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{fancyvrb}
 
-\title{Programming 2//Assignment Number}
+\title{Programming 2\\Assignment Number 2}
 \author{Robert R. Russell}
+\date{January 28, 2001}
 
 \begin{document}
 
 \maketitle
 
-\begin{abstract}
-
-\end{abstract}
-
 \section{Definition Of Problem}
+We are to write a program that calculates a table of square roots for
+a given range of numbers with a given increment. The range and increment will be
+given as command line arguments.
 
 \section{Preliminary Analysis}
+The primary problems with this code will be determining whether the start and
+end of a range are valid with a given increment. There are only two possible
+valid combinations.
+\begin{enumerate}
+\item start $<$ end and increment $>$ 0
+\item start $>$ end and increment $<$ 0
+\end{enumerate}
 
+\newpage 
 \section{Code and Output}
+\fvset{numbers=left}
+
+\subsection{Makefile}
+\VerbatimInput{Makefile}
+
+\subsection{common\_datatypes.h}
+\VerbatimInput{common_datatypes.h}
+
+\subsection{constraints.h}
+\VerbatimInput{constraints.h}
+
+\newpage
+\subsection{main.c}
+\VerbatimInput{main.c}
+
+\subsection{table\_generator.h}
+\VerbatimInput{table_generator.h}
+
+\subsection{table\_generator.c}
+\VerbatimInput{table_generator.c}
+
+\subsection{Runs}
+\begin{verbatim}./table -1 23 3\end{verbatim}
+\begin{tabular}{l|l}
+Number & Square Root \\ \hline
+-1 & 1.0000$\imath$ \\ 
+2 & 1.4142 \\ 
+5 & 2.2361 \\ 
+8 & 2.8284 \\ 
+11 & 3.3166 \\ 
+14 & 3.7417 \\ 
+17 & 4.1231 \\ 
+20 & 4.4721 \\ 
+23 & 4.7958 \\ 
+\end{tabular}
+
+\begin{verbatim}./table 23 4 -3\end{verbatim}
+\begin{tabular}{l|l}
+Number & Square Root \\ \hline
+23 & 4.7958 \\ 
+20 & 4.4721 \\ 
+17 & 4.1231 \\ 
+14 & 3.7417 \\ 
+11 & 3.3166 \\ 
+8 & 2.8284 \\ 
+5 & 2.2361 \\ 
+\end{tabular}
+
 
 \section{Final Analysis}
+This assignment was more difficult than the previous assignment for two reasons.
+primarily because of the complexity of the program. The program we were assigned
+to write has several major conditions that must be met:
+\begin{enumerate}
+\item Enforce the correct number and parsing of the command line arguments.
+\item Variable direction and length of iteration. The loop conditional changes
+depends on the direction of iteration.
+\item Correct handling of negative values. The C sqrt() is only defined for
+positive real numbers. It will not work with negative numbers.
+\item Correct handling of the starting and ending points of the range if the 
+direction of iteration is not correct. 
+\end{enumerate}
+While these conditions are not hard to satisfy, doing so while keeping a maintable
+source tree does require some up front thinking. Even after Software Design and
+Development I still have a habit of coding before thinking.
 
 \end{document}

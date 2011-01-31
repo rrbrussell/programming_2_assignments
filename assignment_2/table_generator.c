@@ -11,13 +11,13 @@ void table_generator(struct bounds_struct bounds) {
   int counter;
   double result;
   char normal_format_string[] = "%d & %.4f \\\\ \n";
-  char imaginary_format_string[] = "%d & %.4f\\imath \\\\ \n";
+  char imaginary_format_string[] = "%d & %.4f$\\imath$ \\\\ \n";
   /* Start the fancy formatting for Latex */
-  printf("\begin{tabular}{l|c}\n");
+  printf("\\begin{tabular}{l|l}\n");
   printf("Number & Square Root \\\\ \\hline\n");
   if(bounds.starting < bounds.ending) {
     counter = bounds.starting;
-    while(counter < bounds.ending) {
+    while(counter <= bounds.ending) {
       if(counter < 0) {
 	result = sqrt(abs(counter));
 	printf(imaginary_format_string, counter, result);
@@ -29,7 +29,7 @@ void table_generator(struct bounds_struct bounds) {
     }
   } else {
     counter = bounds.starting;
-    while(counter > bounds.ending) {
+    while(counter >= bounds.ending) {
       if(counter < 0) {
 	result = sqrt(abs(counter));
 	printf(imaginary_format_string, counter, result);

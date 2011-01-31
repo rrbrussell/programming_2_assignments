@@ -1,7 +1,8 @@
 CFLAGS=-Wall -Werror -I./
 LDFLAGS=-Wl,--as-needed
 CC=gcc $(CFLAGS)
-WRITEUP_INCLUDES=main.c table_generator.c table_generator.h constraints.h constraints.c common_datatypes.h
+WRITEUP_INCLUDES=main.c table_generator.c table_generator.h constraints.h
+WRITEUP_INCLUDES+=constraints.c common_datatypes.h
 
 ALL: writeup.pdf table
 
@@ -19,3 +20,6 @@ constraints.o: constraints.c constraints.h common_datatypes.h
 
 writeup.pdf: writeup.tex $(WRITEUP_INCLUDES)
 	pdflatex writeup.tex
+
+clean: 
+	rm *.o table writeup.{aux,log,pdf}
