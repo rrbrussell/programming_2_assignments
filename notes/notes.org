@@ -6,3 +6,10 @@
 Fairly trivial to implement see getenv() function.
 *** Command Line
 
+* 2011-02-14
+** Quadratic Equation Solver
+There is a lot of complexity in this equation.
+The basic problems is/are
+*** The Bounds of the equation
+
+*** 
