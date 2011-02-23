@@ -5,7 +5,8 @@ Commonly used for designing systems or networks that are very complex.
 ** The connecting lines are known as Software Connection Bus
 
 * Assignment 3: Create a solver for quadratic equations
-  DEADLINE: <2011-02-23 Wed 09:00>
+  DEADLINE: <2011-02-23 Wed 12:00>
+  SCHEDULED: <2011-02-21 Mon 11:00>
 
 ** Hint for complex roots
    The (+/-)sqrt(4ac-bc)/2a is the imaginary part of the equation
@@ -14,4 +15,4 @@ Commonly used for designing systems or networks that are very complex.
    Can be written as a vector or ordered pair (Real, Imaginary) or Real + Imaginary.
 ** Assignment sheet page 2
    Examples that can be used for testing of the program and our knowledge of quadratic
-   equations.
+   equati
