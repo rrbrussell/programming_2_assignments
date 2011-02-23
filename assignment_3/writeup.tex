@@ -1,10 +1,11 @@
 \documentclass[letterpaper,oneside]{scrartcl}
 \usepackage[utf8x]{inputenc}
-\usepackage[amsmath]
+\usepackage{amsmath}
+\usepackage{fancyvrb}
 
 \title{Programming 2\\Assignment Number 3}
 \author{Robert R. Russell}
-\date{Wednesday, February 23, 2011}
+\date{February 23, 2011}
 
 \begin{document}
 
@@ -13,14 +14,60 @@
 \section{Definition Of The Assignment}
 This program is a tool that finds the roots a quadratic equation using the quadratic formula.
 A quadratic equation is a second degree polynomial equation of the form $ax^2 + bx + c = 0$ where $x$
-is a variable, $a$, $b$, and $c$ are constants and $a$ satisfies the constraint $a \neq 0$. The quadratic formula
-is $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$.
+is a variable, $a$, $b$, and $c$ are constants and $a$ satisfies the constraint $a \neq 0$.
 
 \section{Preliminary Analysis}
-
+The basic design is:
+\begin{enumerate}
+  \item Handle the correct number of arguments
+  \item Separate the linear and quadratic equations
+  \item Solve the linear equations
+  \item Separate the real and complex quadratic equations
+  \item Solve the real quadratic equations
+  \item Solve the complex quadratic equations
+\end{enumerate}
+\newpage
 
 \section{Code and Output}
+\fvset{numbers=left}
+
+\subsection{test\_data.txt}
+\VerbatimInput{test_data.txt}
+
+\subsection{test\_results.txt}
+\VerbatimInput{test_results.txt}
+
+\subsection{SolveLinear.h}
+\VerbatimInput{SolveLinear.h}
+
+\subsection{main.c}
+\VerbatimInput{main.c}
+\newpage
+
+\subsection{SolveComplex.c}
+\VerbatimInput{SolveComplex.c}
+
+\subsection{SolveComplex.h}
+\VerbatimInput{SolveComplex.h}
+
+\subsection{SolveQuadratic.h}
+\VerbatimInput{SolveQuadratic.h}
+
+\subsection{SolveLinear.c}
+\VerbatimInput{SolveLinear.c}
+
+\subsection{SolveQuadratic.c}
+\VerbatimInput{SolveQuadratic.c}
+
+\subsection{SolveReal.c}
+\VerbatimInput{SolveReal.c}
+
+\subsection{SolveReal.h}
+\VerbatimInput{SolveReal.h}
 
 \section{Final Analysis}
+This was a fairly simple problem to code because a good chunk of the design architecture was shown to us in class.
+The only problems I hit was forgetting to multiply the discriminant by $-1$ in the complex solutions and an
+output quirk that needs some more work.
 
 \end{document}

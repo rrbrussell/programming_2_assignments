@@ -11,7 +11,7 @@ test_results.txt: solvequad
 solvequad: $(OBJECTS) 
 	$(CC) -o solvequad $(OBJECTS) $(LDFLAGS)
 
-writeup.pdf: writeup.tex ${SOURCES}
+writeup.pdf: writeup.tex ${SOURCES} test_results.txt test_data.txt
 	pdflatex writeup.tex
 
 clean:
