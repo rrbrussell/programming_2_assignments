@@ -1,7 +1,7 @@
 CFLAGS = -Wall
 CC = gcc $(CFLAGS)
-LDFLAGS = 
-OBJECTS = main.o SolveLinear.o SolveQuadratic.o
+LDFLAGS = -lm
+OBJECTS = main.o SolveLinear.o SolveQuadratic.o SolveComplex.o SolveReal.o
 SOURCES = *.c *.h
 
 test_results.txt: solvequad
