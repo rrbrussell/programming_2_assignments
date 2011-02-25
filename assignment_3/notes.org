@@ -4,7 +4,7 @@ Commonly used for designing systems or networks that are very complex.
 ** Excelent for Top-Down design
 ** The connecting lines are known as Software Connection Bus
 
-* Assignment 3: Create a solver for quadratic equations
+* DONE Assignment 3: Create a solver for quadratic equations
   DEADLINE: <2011-02-23 Wed 12:00>
   SCHEDULED: <2011-02-21 Mon 11:00>
 
@@ -16,3 +16,11 @@ Commonly used for designing systems or networks that are very complex.
 ** Assignment sheet page 2
    Examples that can be used for testing of the program and our knowledge of quadratic
    equati
+
+* Review
+** Preliminay Analysis
+   The preliminary analysis should be enough information to actually write
+   the software from. Requires significant experience with the problem domain.
+** Use full prototypes for functions
+   Do not use void junk(int, int, int) use
+   junk(int x, int y, int z,)

@@ -1,0 +1,16 @@
+* Assignment 4 - Sorting Random Numbers
+** Hidden Purposes
+   - Separate compilation
+   - Random numbers
+   - Arrays
+*** Sorting Algorithms
+    - bubble sort
+    - bubble sort with flag
+    - selection sort
+    - esoteric sorters
+*** Arrays
+    An array is a contiguous collection of objects of the same type.
+    Can be numbered.
+
+    Except for the contiguous memory location requirement an array is
+    a linear iteratable collection of the same type. 
