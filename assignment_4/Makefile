@@ -1,7 +1,8 @@
-CFLAGS = -Wall
-CC = gcc $(CFLAGS)
+#DEBUG = -DPRINTRANDOM
+CFLAGS = -Wall $(DEBUG)
+CC = gcc
 #LDFLAGS = -lm
-OBJECTS = main.o
+OBJECTS = main.o random.o printrandoms.o
 SOURCES = *.c *.h
 
 #test_results.txt: solvequad
@@ -15,5 +16,4 @@ writeup.pdf: writeup.tex ${SOURCES}
 	pdflatex writeup.tex
 
 clean:
-	-rm -f writeup.{pdf,aux,log} *.o sortrandom * 
-
+	-rm -f writeup.{pdf,aux,log} *.o sortrandom
