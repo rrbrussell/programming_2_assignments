@@ -16,4 +16,4 @@ writeup.pdf: writeup.tex ${SOURCES}
 	pdflatex writeup.tex
 
 clean:
-	-rm -f writeup.{pdf,aux,log} *.o sortrandom
+	-rm -f writeup.{pdf,aux,log} *.o  *.?~ sortrandom
