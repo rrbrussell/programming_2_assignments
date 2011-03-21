@@ -1,5 +1,5 @@
 /* assignment_4/sort.c
-   sorter
+   Selection Sorter
 */
 
 #include "sort.h"

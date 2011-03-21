@@ -3,20 +3,67 @@
 \usepackage{amsmath}
 \usepackage{fancyvrb}
 
-\title{Programming 2//Assignment Number}
+\title{Programming 2\\Assignment Number 4}
 \author{Robert R. Russell}
-\date{Insert Date}
+\date{\today}
 
 \begin{document}
 
 \maketitle
 
 \section{Definition Of Problem}
-
+This assignment is to create a program that could fill an array with up to 100000 random numbers.
+The choice of numbers is given on the command line.
 \section{Preliminary Analysis}
+The basic steps of the problem is:
+\begin{enumerate}
+\item Find out how many numbers to generate and sort.
+  \begin{enumerate}
+  \item Verify the number of command line arguments.
+  \item Convert the numbers argument to a number.
+  \item Verify it is within the bounds of the problem.
+  \end{enumerate}
+\item Fill array with random numbers.
+  \begin{enumerate}
+  \item Seed the random number generator.
+  \item Generate the random numbers storing them in the array.
+  \end{enumerate}
+\item Sort the numbers.
+\end{enumerate}
 
 \section{Code and Output}
+\fvset{numbers=left}
+
+Note code protected by
+\begin{verbatim}
+#ifdef PRINTRANDOM
+\end{verbatim}
+is debuging code.
+
+\subsection{main.c}
+\VerbatimInput{main.c}
+
+\subsection{random.h}
+\VerbatimInput{random.h}
+
+\subsection{random.c}
+\VerbatimInput{random.c}
+
+\subsection{sort.h}
+\VerbatimInput{sort.h}
+
+\subsection{sort.c}
+\VerbatimInput{sort.c}
+
+\subsection{printrandoms.h}
+\VerbatimInput{printrandoms.h}
+
+\subsection{printrandoms.c}
+\VerbatimInput{printrandoms.c}
 
 \section{Final Analysis}
+This program was a fairly simple program to write assuming you use a simple
+sorter, such as a bubble or selection sort. Not a heap sort which is what I
+tried to use first.
 
 \end{document}

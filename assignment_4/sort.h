@@ -1,5 +1,5 @@
 /* assignment_4/sort.h
-   Bubble Sorter
+   Selection Sorter
 */
 
 #ifndef ASSIGNMENT_4_SORT_H
