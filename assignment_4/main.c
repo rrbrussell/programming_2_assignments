@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "random.h"
 #include "printrandoms.h"
+#include "sort.h"
 
 int main(int argc, char* argv[]) {
   const size_t MAX_ARRAY_SIZE = 100000;
@@ -28,6 +29,13 @@ int main(int argc, char* argv[]) {
   #ifdef PRINTRANDOM
   printrandoms(numbers, NumberOfInts);
   #endif
-  /*sort(&numbers, NumberOfInts);*/
+  if(NumberOfInts > 2) {
+    /* A single number is already sorted */
+    sort(numbers, NumberOfInts);
+  }
+  #ifdef PRINTRANDOM
+  printf("\n");
+  printrandoms(numbers, NumberOfInts);
+  #endif
   exit(EXIT_SUCCESS);
 }

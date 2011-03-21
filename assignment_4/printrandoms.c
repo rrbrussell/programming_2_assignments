@@ -8,6 +8,6 @@
 void printrandoms(size_t numbers[], size_t HowManyNumbers) {
   size_t counter = 0;
   for( ; counter < HowManyNumbers; ++counter) {
-    printf("%lu\n", numbers[counter]);
+    printf("%015lu\n", numbers[counter]);
   }
 }

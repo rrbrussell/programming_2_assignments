@@ -1,8 +1,8 @@
-#DEBUG = -DPRINTRANDOM
+DEBUG = -DPRINTRANDOM
 CFLAGS = -Wall $(DEBUG)
 CC = gcc
 #LDFLAGS = -lm
-OBJECTS = main.o random.o printrandoms.o
+OBJECTS = main.o random.o printrandoms.o sort.o
 SOURCES = *.c *.h
 
 #test_results.txt: solvequad
