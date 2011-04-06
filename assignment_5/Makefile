@@ -1,9 +1,10 @@
-DEBUG = -DDEBUG
-CFLAGS = -Wall $(DEBUG)
-CC = gcc
+#DEBUG = -DDEBUG
+CFLAGS = -Wall $(DEBUG) -std=gnu99 -pedantic
+CC = gcc 
 #LDFLAGS = -lm
-OBJECTS = main.o 
+OBJECTS = main.o
 SOURCES = *.c *.h
+HEADERS = *.h
 EXECUTABLE_NAME = stacker
 
 #Phony targets
@@ -16,11 +17,11 @@ all: writeup.pdf $(EXECUTABLE_NAME)
 #	./run_tests.sh
 #	cat test_results.txt
 
-$(EXECUTABLE_NAME): $(OBJECTS) 
-	$(CC) -o sortrandom $(OBJECTS) $(LDFLAGS)
+$(EXECUTABLE_NAME): $(OBJECTS) $(HEADERS)
+	$(CC) -o $(EXECUTABLE_NAME) $(OBJECTS) $(LDFLAGS)
 
 writeup.pdf: writeup.tex ${SOURCES}
-	pdflatex writeup.tex
+	pdflatex writeup.tex > /dev/null
 
 clean:
-	-rm -f writeup.{pdf,aux,log} *.o  *.*~ sortrandom
+	-rm -f writeup.{pdf,aux,log} *.o  *.*~ $(EXECUTABLE_NAME)
