@@ -2,7 +2,7 @@
 CFLAGS = -Wall $(DEBUG) -std=gnu99 -pedantic
 CC = gcc 
 #LDFLAGS = -lm
-OBJECTS = main.o
+OBJECTS = main.o stack.o
 SOURCES = *.c *.h
 HEADERS = *.h
 EXECUTABLE_NAME = stacker
@@ -21,7 +21,7 @@ $(EXECUTABLE_NAME): $(OBJECTS) $(HEADERS)
 	$(CC) -o $(EXECUTABLE_NAME) $(OBJECTS) $(LDFLAGS)
 
 writeup.pdf: writeup.tex ${SOURCES}
-	pdflatex writeup.tex > /dev/null
+	pdflatex writeup.tex 
 
 clean:
 	-rm -f writeup.{pdf,aux,log} *.o  *.*~ $(EXECUTABLE_NAME)

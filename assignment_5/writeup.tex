@@ -24,14 +24,16 @@ The stack must satisfy the following criteria:
 \end{enumerate}
 
 \section{Preliminary Analysis}
-A basic implementation uses a linked list to implement the data portion of the implementation.
-A linked list consists of a series of nodes.
+
+This basic implementation uses a linked list to implement the data portion of the implementation.
+A linked list consists of a series of nodes and links describing the ordering of the nodes.
 A node in a linked list is a structure that contains a data item and a pointer to the next node in the list.
 
+The functions are also provided in with the data structure.
+
+The menu for the user is in main.
 
 \section{Code and Output}
-
-\section{Final Analysis}
 \fvset{numbers=left}
 
 \subsection{main.c}
@@ -39,5 +41,36 @@ A node in a linked list is a structure that contains a data item and a pointer t
 
 \subsection{stack.h}
 \VerbatimInput{stack.h}
+
+\subsection{stack.c}
+\VerbatimInput{stack.c}
+
+\subsection{Output}
+I could not get the program to work successfully because the ``theStack'' variable in main
+would not update correctly upon the return from pushStack;
+
+\begin{Verbatim}
+Welcome to stacker
+Main Menu
+1. Add to stack
+2. Delete from stack
+3. List the stack
+4. Quit
+Your Choice: 1
+Enter a number: 342
+New node allocated at 0x1ef0070
+theStack is now (nil)
+Main Menu
+1. Add to stack
+2. Delete from stack
+3. List the stack
+4. Quit
+Your Choice: 4
+bye
+\end{Verbatim}
+
+\section{Final Analysis}
+
+A simple program great a exploring C's memory handling capabilities.
 
 \end{document}

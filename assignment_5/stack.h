@@ -24,4 +24,6 @@ void pushStack(stackNode stack, int data);
 
 bool isStackEmpty(stackNode stack);
 bool isStackFull(stackNode stack);
+
+void listStack(stackNode stack);
 #endif
