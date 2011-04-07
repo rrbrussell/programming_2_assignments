@@ -46,20 +46,49 @@ The menu for the user is in main.
 \VerbatimInput{stack.c}
 
 \subsection{Output}
-I could not get the program to work successfully because the ``theStack'' variable in main
-would not update correctly upon the return from pushStack;
-
+\fvset{numbers=none}
 \begin{Verbatim}
-Welcome to stacker
+robruss@cs:~/programming_2/assignment_5$ ./stacker                             
+Welcome to stacker                                                             
+Main Menu                                                                      
+1. Add to stack                                                                
+2. Delete from stack                                                           
+3. List the stack                                                              
+4. Quit                                                                        
+Your Choice: 1                                                                 
+Enter a number: 2234                                                           
 Main Menu
 1. Add to stack
 2. Delete from stack
 3. List the stack
 4. Quit
 Your Choice: 1
-Enter a number: 342
-New node allocated at 0x1ef0070
-theStack is now (nil)
+Enter a number: 8953
+Main Menu
+1. Add to stack
+2. Delete from stack
+3. List the stack
+4. Quit
+Your Choice: 3
+Node: 0x1a0f0b0
+Data: 8953
+Node: 0x1a0f090
+Data: 2234
+Main Menu
+1. Add to stack
+2. Delete from stack
+3. List the stack
+4. Quit
+Your Choice: 2
+The number is 8953
+Main Menu
+1. Add to stack
+2. Delete from stack
+3. List the stack
+4. Quit
+Your Choice: 3
+Node: 0x1a0f090
+Data: 2234
 Main Menu
 1. Add to stack
 2. Delete from stack
@@ -67,6 +96,7 @@ Main Menu
 4. Quit
 Your Choice: 4
 bye
+robruss@cs:~/programming_2/assignment_5$
 \end{Verbatim}
 
 \section{Final Analysis}

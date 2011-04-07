@@ -7,26 +7,24 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void stackInit(stackNode stack) {
-  stack = NULL;
+void stackInit(stackNode *pointerToAStack) {
+  *pointerToAStack = NULL;
 }
 
-int popStack(stackNode stack) {
-  stackNode tempNode = stack;
-  int tempData = stack->data;
-  stack = stack->next;
+int popStack(stackNode *pointerToAStack) {
+  stackNode tempNode = *pointerToAStack;
+  int tempData = (*pointerToAStack)->data;
+  *pointerToAStack = (*pointerToAStack)->next;
   free(tempNode);
   tempNode = NULL;
   return tempData;
 }
 
-void pushStack(stackNode stack, int data) {
+void pushStack(stackNode *pointerToAStack, int data) {
   stackNode tempNode = (struct aNode *) malloc(sizeof(struct aNode));
-  printf("New node allocated at %p\n", (void *) tempNode);
   tempNode->data = data;
-  tempNode->next = stack;
-  stack = tempNode;
-  tempNode = NULL;
+  tempNode->next = *pointerToAStack;
+  *pointerToAStack = tempNode;
 }
 
 bool isStackEmpty(stackNode stack) {
@@ -49,24 +47,19 @@ bool isStackFull(stackNode stack) {
 
 void listStack(stackNode stack) {
   stackNode currentNode = stack;
-  #ifdef DEBUG
-  printf("in listStack\n");
-  #endif
-  while(isStackEmpty(currentNode)) {
+  while(!isStackEmpty(currentNode)) {
     printf("Node: %p\nData: %i\n",
-	   // The Cast is just for printing
 	   (void*) currentNode, currentNode->data);
     currentNode = currentNode->next;
   }
 }
 
-void emptyStack(stackNode stack) {
-  stackNode currentNode = stack->next;
-  stackNode tempNode = stack;
+void emptyStack(stackNode *pointerToAStack) {
+  stackNode currentNode = *pointerToAStack;
   while(isStackEmpty(currentNode)) {
-    free(tempNode);
-    tempNode = currentNode;
+    stackNode tempNode = currentNode;
     currentNode = currentNode->next;
+    free(tempNode);
   }
 }
   

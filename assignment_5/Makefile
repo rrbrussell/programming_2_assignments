@@ -1,5 +1,5 @@
 #DEBUG = -DDEBUG
-CFLAGS = -Wall $(DEBUG) -std=gnu99 -pedantic
+CFLAGS = -Wall -Werror $(DEBUG) -std=gnu99 -pedantic
 CC = gcc 
 #LDFLAGS = -lm
 OBJECTS = main.o stack.o

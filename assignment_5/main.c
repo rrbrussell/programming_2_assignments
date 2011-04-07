@@ -3,23 +3,25 @@
    Requires C99
 */
 
+/* Added just for the compiler on cs.ecok.edu */
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif
 #include <stdlib.h>
 #include <stdio.h>
 #include "stack.h"
 
 int main() {
   const int addToStack = 1;
-  const int deleteFromStack = 2;
-  const int listAStack = 3;
   const int quit = 4;
 
   char *line = (char *) malloc(81*sizeof(char));
-  size_t *length;
+  size_t *length = (size_t *) malloc(sizeof(size_t));
   *length = 80;
   int data;
   int chosenOperation;
   stackNode theStack = NULL;
-  stackInit(theStack);
+  stackInit(&theStack);
   printf("Welcome to stacker\n");
   do {
     printf("Main Menu\n");
@@ -30,7 +32,6 @@ int main() {
     printf("Your Choice: ");
     getline(&line, length, stdin);
     sscanf(line, "%d", &chosenOperation);
-    *length = 80;
     switch(chosenOperation) {
     case 1:
       if(isStackFull(theStack)) {
@@ -39,8 +40,7 @@ int main() {
 	printf("Enter a number: ");
 	getline(&line, length, stdin);
 	sscanf(line,"%d", &data);
-	pushStack(theStack, data);
-	*length = 80;
+	pushStack(&theStack, data);
 	printf("theStack is now %p\n", (void *) theStack);
       }
       break;
@@ -48,7 +48,7 @@ int main() {
       if(isStackEmpty(theStack)) {
 	printf("sorry the stack is empty\n");
       } else {
-	printf("The number is %d\n", popStack(theStack));
+	printf("The number is %d\n", popStack(&theStack));
       }
       break;
     case 3:
@@ -66,7 +66,10 @@ int main() {
   } while (!((chosenOperation < addToStack)
 	     || (chosenOperation >= quit)));
   free(line);
-  free(theStack);
+  emptyStack(&theStack);
+  free(length);
   line = NULL;
+  length = NULL;
+  theStack = NULL;
   return EXIT_SUCCESS;
 }

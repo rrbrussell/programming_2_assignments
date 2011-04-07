@@ -16,14 +16,21 @@ struct aNode {
   stackNode next;
 };
 
+/* pointerToAStack is a pointer to aStack. In C++ a reference to aStack
+   would be used instead
+   
+   aStack is a pointer to aNode.
+*/
 
-void stackInit(stackNode stack);
 
-int popStack(stackNode stack);
-void pushStack(stackNode stack, int data);
+void stackInit(stackNode *pointerToAStack);
 
-bool isStackEmpty(stackNode stack);
-bool isStackFull(stackNode stack);
+int popStack(stackNode *pointerToAStack);
+void pushStack(stackNode *pointerToAStack, int data);
 
-void listStack(stackNode stack);
+bool isStackEmpty(stackNode aStack);
+bool isStackFull(stackNode aStack);
+
+void listStack(stackNode aStack);
+void emptyStack(stackNode *pointerToAStack);
 #endif
