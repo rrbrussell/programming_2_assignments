@@ -6,8 +6,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "queue.h"
+#include "menu.h"
 
 int main() {
+  char programName[] = "queuer";
   /*const int addToStack = 1;
   const int deleteFromStack = 2;
   const int listAStack = 3;
@@ -20,14 +22,11 @@ int main() {
   int chosenOperation;
   stackNode theStack = NULL;
   stackInit(theStack);
-  printf("Welcome to stacker\n");
+  */
+  printf("Welcome to %s\n", programName);
+  /*
   do {
-    printf("Main Menu\n");
-    printf("1. Add to stack\n");
-    printf("2. Delete from stack\n");
-    printf("3. List the stack\n");
-    printf("4. Quit\n");
-    printf("Your Choice: ");
+  print("%s%s", main_menu_string, choice_string);
     getline(&line, length, stdin);
     sscanf(line, "%d", &chosenOperation);
     *length = 80;
