@@ -8,14 +8,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char mainMenuString[] =
-  "Main Menu\n" \
-  "1. Add to stack\n" \
-  "2. Delete from stack\n" \
-  "3. List the stack\n" \
-  "4. Quit\n";
+extern char mainMenuString[];
 
-char choiceString[] = "Your Choice: ";
+extern char choiceString[];
 
 int fetchINT(FILE* stream);
 

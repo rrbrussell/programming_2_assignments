@@ -15,9 +15,6 @@ int main() {
   const int listAStack = 3;
   const int quit = 4;
 
-  char *line = (char *) malloc(81*sizeof(char));
-  size_t *length;
-  *length = 80;
   int data;
   int chosenOperation;
   stackNode theStack = NULL;
@@ -27,8 +24,6 @@ int main() {
   /*
   do {
   print("%s%s", main_menu_string, choice_string);
-    getline(&line, length, stdin);
-    sscanf(line, "%d", &chosenOperation);
     *length = 80;
     switch(chosenOperation) {
     case 1:
