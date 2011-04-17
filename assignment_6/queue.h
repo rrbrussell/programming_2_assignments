@@ -1,6 +1,6 @@
 /* assignment_6/queue.h
    Queue prototypes for assignment_6
-   Requires C99
+   Requires C99 for bool type
 */
 
 #ifndef ASSIGNMENT_6_QUEUE_H
