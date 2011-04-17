@@ -5,15 +5,6 @@
 
 #include "menu.h"
 
-char mainMenuString[] =
-  "Main Menu\n" \
-  "1. Add to stack\n" \
-  "2. Delete from stack\n" \
-  "3. List the stack\n" \
-  "4. Quit\n";
-
-char choiceString[] = "Your Choice: ";
-
 int fetchINT(FILE* stream) {
   char *line = (char *) malloc(81*sizeof(char));
   size_t *length = (size_t *) malloc(sizeof(size_t));

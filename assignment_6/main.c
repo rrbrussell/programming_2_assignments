@@ -8,59 +8,63 @@
 #include "queue.h"
 #include "menu.h"
 
+char mainMenuString[] =
+  "Main Menu\n" \
+  "1. Add to queue\n" \
+  "2. Delete from queue\n" \
+  "3. List the queue\n" \
+  "4. Quit\n" \
+  "Your Choice: ";
+
 int main() {
   char programName[] = "queuer";
-  /*const int addToStack = 1;
-  const int deleteFromStack = 2;
-  const int listAStack = 3;
+  const int addToQueue = 1;
   const int quit = 4;
 
   int data;
   int chosenOperation;
-  stackNode theStack = NULL;
-  stackInit(theStack);
-  */
+
   printf("Welcome to %s\n", programName);
-  /*
+  
   do {
-  print("%s%s", main_menu_string, choice_string);
-    *length = 80;
+  printf("%s", mainMenuString);
+  chosenOperation = fetchINT(stdin);
     switch(chosenOperation) {
     case 1:
-      if(isStackFull(theStack)) {
-	printf("sorry the stack is full\n");
-      } else {
-	printf("Enter a number: ");
-	getline(&line, length, stdin);
-	sscanf(line,"%d", &data);
-	pushStack(theStack, data);
-	*length = 80;
-	printf("theStack is now %p\n", (void *) theStack);
-      }
+      /*if(isQueueFull(theQueue)) {
+	printf("sorry the queue is full\n");
+	} else {*/
+      printf("Enter a number: ");
+      data = fetchINT(stdin);
+      printf("You entered: %d\n", data);
+      //}
       break;
     case 2:
-      if(isStackEmpty(theStack)) {
-	printf("sorry the stack is empty\n");
+      /*if(isQueueEmpty(theQueue)) {
+	printf("sorry the queue is empty\n");
       } else {
-	printf("The number is %d\n", popStack(theStack));
-      }
+	printf("The number is %d\n", popQueue(theQueue));
+	}*/
+      printf("fetching from the queue\n");
       break;
     case 3:
-      if(isStackEmpty(theStack)) {
-	printf("sorry the stack is empty\n");
+      /*if(isQueueEmpty(theQueue)) {
+	printf("sorry the queue is empty\n");
       } else {
-	listStack(theStack);
-      }
+	listQueue(theQueue);
+	}*/
+      printf("printing the queue\n");
       break;
     case 4:
-    default:
       printf("bye\n");
+      break;
+    default:
+      printf("Oops Wrong input\n");
+      chosenOperation = addToQueue;
     }
       
-  } while (!((chosenOperation < addToStack)
+  } while (!((chosenOperation < addToQueue)
 	     || (chosenOperation >= quit)));
-  free(line);
-  free(theStack);
-  line = NULL;*/
+  //free(theQueue);
   return EXIT_SUCCESS;
 }

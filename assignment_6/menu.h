@@ -8,10 +8,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-extern char mainMenuString[];
-
-extern char choiceString[];
-
 int fetchINT(FILE* stream);
 
 #endif
