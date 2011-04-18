@@ -5,7 +5,7 @@
 
 \title{Programming 2\\Assignment Number 6}
 \author{Robert R. Russell}
-\date{April 15, 2011}
+\date{April 18, 2011}
 
 \begin{document}
 
@@ -15,14 +15,14 @@
 This assignment is to create a queue of integers borrowing the list from our
 previous assignment.
 
-The stack must satisfy the following criteria:
+The queue must satisfy the following criteria:
 \begin{enumerate}
-\item Provide for pushing to a stack.
-\item Provide for popping from a stack.
+\item Provide for adding to a queue.
+\item Provide for popping from a queue.
 \item Provide a check for the empty condition.
 \item Provide a check for the full condition.
-\item Provide a Type-def for the data structure used to implement the stack.
-\item Provide an initialization method to setup a stack.
+\item Provide a Type-def for the data structures used to implement the queue.
+\item Provide an initialization method to setup a queue.
 \end{enumerate}
 
 \section{Preliminary Analysis}
@@ -54,31 +54,77 @@ The menu for the user is in main.
 \VerbatimInput{menu.c}
 
 \subsection{Output}
-I could not get the program to work successfully because the ``theStack'' variable in main
-would not update correctly upon the return from pushStack;
-
 \begin{Verbatim}
-Welcome to stacker
+robert@saturn ~/school/programming_2/assignment_6 $ ./queuer 
+Welcome to queuer
 Main Menu
-1. Add to stack
-2. Delete from stack
-3. List the stack
+1. Add to queue
+2. Delete from queue
+3. List the queue
 4. Quit
 Your Choice: 1
-Enter a number: 342
-New node allocated at 0x1ef0070
-theStack is now (nil)
+Enter a number: 234
 Main Menu
-1. Add to stack
-2. Delete from stack
-3. List the stack
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 1
+Enter a number: 765
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 3
+Node: 0xd7e090
+Data: 234
+Node: 0xd7e0b0
+Data: 765
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 2
+The number is 234
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 3
+Node: 0xd7e0b0
+Data: 765
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 1
+Enter a number: 321
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 3
+Node: 0xd7e0b0
+Data: 765
+Node: 0xd7e090
+Data: 321
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
 4. Quit
 Your Choice: 4
 bye
+robert@saturn ~/school/programming_2/assignment_6 $ 
 \end{Verbatim}
 
 \section{Final Analysis}
 
-A simple program great a exploring C's memory handling capabilities.
+Something I have done so many times I prefer to use libraries.
 
 \end{document}
