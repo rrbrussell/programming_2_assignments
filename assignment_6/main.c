@@ -18,53 +18,55 @@ char mainMenuString[] =
 
 int main() {
   char programName[] = "queuer";
-  const int addToQueue = 1;
+  const int AddToQueue = 1;
   const int quit = 4;
 
   int data;
   int chosenOperation;
 
   printf("Welcome to %s\n", programName);
-  
+
+  queue theQueue = NULL;
+  initializeQueue(&theQueue);
+
   do {
   printf("%s", mainMenuString);
   chosenOperation = fetchINT(stdin);
     switch(chosenOperation) {
     case 1:
-      /*if(isQueueFull(theQueue)) {
+      if (isQueueFull(theQueue)) {
 	printf("sorry the queue is full\n");
-	} else {*/
-      printf("Enter a number: ");
-      data = fetchINT(stdin);
-      printf("You entered: %d\n", data);
-      //}
+      } else {
+	printf("Enter a number: ");
+	data = fetchINT(stdin);
+	addToQueue(theQueue, data);
+      }
       break;
     case 2:
-      /*if(isQueueEmpty(theQueue)) {
+      if(isQueueEmpty(theQueue)) {
 	printf("sorry the queue is empty\n");
       } else {
-	printf("The number is %d\n", popQueue(theQueue));
-	}*/
-      printf("fetching from the queue\n");
+	printf("The number is %d\n", takeFromQueue(theQueue));
+      }
       break;
     case 3:
-      /*if(isQueueEmpty(theQueue)) {
+      if(isQueueEmpty(theQueue)) {
 	printf("sorry the queue is empty\n");
       } else {
-	listQueue(theQueue);
-	}*/
-      printf("printing the queue\n");
+	printQueue(theQueue);
+      }
       break;
     case 4:
       printf("bye\n");
       break;
     default:
       printf("Oops Wrong input\n");
-      chosenOperation = addToQueue;
+      chosenOperation = AddToQueue;
     }
       
-  } while (!((chosenOperation < addToQueue)
+  } while (!((chosenOperation < AddToQueue)
 	     || (chosenOperation >= quit)));
-  //free(theQueue);
+  emptyQueue(theQueue);
+  free(theQueue);
   return EXIT_SUCCESS;
 }

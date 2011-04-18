@@ -21,7 +21,7 @@ typedef struct queueStruct {
   queueNode last;
 } *queue;
 
-void initializeQueue(queue aQueue);
+void initializeQueue(queue *aQueue);
 
 int takeFromQueue(queue aQueue);
 void addToQueue(queue aQueue, int data);
