@@ -1,0 +1,130 @@
+\documentclass[letterpaper,oneside]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{fancyvrb}
+
+\title{Programming 2\\Assignment Number 6}
+\author{Robert R. Russell}
+\date{April 18, 2011}
+
+\begin{document}
+
+\maketitle
+
+\section{Definition Of Problem}
+This assignment is to create a queue of integers borrowing the list from our
+previous assignment.
+
+The queue must satisfy the following criteria:
+\begin{enumerate}
+\item Provide for adding to a queue.
+\item Provide for popping from a queue.
+\item Provide a check for the empty condition.
+\item Provide a check for the full condition.
+\item Provide a Type-def for the data structures used to implement the queue.
+\item Provide an initialization method to setup a queue.
+\end{enumerate}
+
+\section{Preliminary Analysis}
+
+This basic implementation uses a linked list to implement the data portion of the implementation.
+A linked list consists of a series of nodes and links describing the ordering of the nodes.
+A node in a linked list is a structure that contains a data item and a pointer to the next node in the list.
+
+The functions are also provided in with the data structure.
+
+The menu for the user is in main.
+
+\section{Code and Output}
+\fvset{numbers=left}
+
+\subsection{main.c}
+\VerbatimInput{main.c}
+
+\subsection{tree.h}
+\VerbatimInput{tree.h}
+
+\subsection{tree.c}
+\VerbatimInput{tree.c}
+
+\subsection{menu.h}
+\VerbatimInput{menu.h}
+
+\subsection{menu.c}
+\VerbatimInput{menu.c}
+
+\subsection{Output}
+\begin{Verbatim}
+robert@saturn ~/school/programming_2/assignment_6 $ ./queuer 
+Welcome to queuer
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 1
+Enter a number: 234
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 1
+Enter a number: 765
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 3
+Node: 0xd7e090
+Data: 234
+Node: 0xd7e0b0
+Data: 765
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 2
+The number is 234
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 3
+Node: 0xd7e0b0
+Data: 765
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 1
+Enter a number: 321
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 3
+Node: 0xd7e0b0
+Data: 765
+Node: 0xd7e090
+Data: 321
+Main Menu
+1. Add to queue
+2. Delete from queue
+3. List the queue
+4. Quit
+Your Choice: 4
+bye
+robert@saturn ~/school/programming_2/assignment_6 $ 
+\end{Verbatim}
+
+\section{Final Analysis}
+
+Something I have done so many times I prefer to use libraries.
+
+\end{document}
